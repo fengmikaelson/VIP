@@ -248,14 +248,14 @@ run_curl_sample() {
     curl -sL $valid_url -o /ql/sample/config.sample.sh && cp -rf /ql/sample/config.sample.sh /ql/config
 }
 if [ "${all}" = 1 ]; then
-    get_valid_config && add_curl_sample && run_curl_sample
+    add_curl_sample && run_curl_sample
 else
     case ${sample} in
         0)  echo "已为您跳过自动更新模板"
         ;;
-        1)  get_valid_config && add_curl_sample
+        1)  add_curl_sample
         ;;
-        2)  get_valid_config && add_curl_sample && run_curl_sample
+        2)  add_curl_sample && run_curl_sample
     esac    
 fi
 
