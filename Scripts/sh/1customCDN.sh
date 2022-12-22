@@ -150,7 +150,7 @@ add_task_code() {
     fi
 }
 if [ "${all}" = 1 ]; then
-    get_valid_code && dl_code_shell && set_default_code && add_task_code
+    dl_code_shell && set_default_code && add_task_code
 elif [ "${code}" = 'n' ]; then
     echo "已为您跳过操作 code.sh"
 else
