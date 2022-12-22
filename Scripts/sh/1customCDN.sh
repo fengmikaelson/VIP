@@ -39,12 +39,7 @@ dl_config_shell() {
         touch $config_shell_path
     fi
     cp $config_shell_path $dir_config/config.sh
-    # 判断是否下载成功
-    config_size=$(ls -l $config_shell_path | awk '{print $5}')
-    if (( $(echo "${config_size} < 100" | bc -l) )); then
-        echo "config.sh 下载失败"
-        exit 0
-    fi
+    
 }
 if [ "${Rconfig}" = 'y' -o "${all}" = 1 ]; then
     dl_config_shell
